@@ -39,7 +39,7 @@ const Loginform = () =>{
 
 
   return(
-    <div className="w-[45rem] mx-auto my-12">
+    <div className="w-6/12 mx-auto my-12">
         <h1 className="text-8xl font-extrabold text-center">LOGIN</h1>
         <form className="flex flex-col" onSubmit={handleSubmit}>
             <label className="text-2xl font-extrabold text-left">Name:</label>
