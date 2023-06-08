@@ -22,7 +22,7 @@ const AuthContextProvider = ({ children }) => {
      .then((res) => {
        res.data && setLoginData(res.data);
       })
-      .catch((err) => window.alert(`Dikkat!! "${err.message}" hatası.. Tekrar deneyin.`));
+      .catch((err) => window.alert(`Warning!! "${err.message}" error.. Please try again.`));
     }
 
     const logOut = () => {
