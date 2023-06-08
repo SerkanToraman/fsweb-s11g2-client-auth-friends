@@ -39,7 +39,7 @@ const Loginform = () =>{
 
 
   return(
-    <div className="w-[55rem] mx-auto my-12">
+    <div className="w-[45rem] mx-auto my-12">
         <h1 className="text-8xl font-extrabold text-center">LOGIN</h1>
         <form className="flex flex-col" onSubmit={handleSubmit}>
             <label className="text-2xl font-extrabold text-left">Name:</label>
@@ -49,7 +49,7 @@ const Loginform = () =>{
             value = {user.username}
             onChange ={handleChange}
             ></input>
-            <label className="text-2xl text-1xl font-extrabold text-left px-2">Surname:</label>
+            <label className="text-2xl text-1xl font-extrabold text-left px-2">Password:</label>
             <input className="bg-black text-white text-2xl h-12 px-2"
             type = "text"
             name = "password"

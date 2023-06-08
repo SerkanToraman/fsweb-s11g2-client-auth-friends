@@ -8,9 +8,9 @@ export const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
   
-  const [isLoggedIn,setIsLoggedIn] = useState(false);
-
    const [loginData,setLoginData]= useLocalStorage("friends",{});
+
+   let isLoggedIn = loginData && loginData.token;
   
    
    
@@ -20,21 +20,18 @@ const AuthContextProvider = ({ children }) => {
        axiosWithAuth()
      .post("/api/login", user)
      .then((res) => {
-       setIsLoggedIn(true);
        res.data && setLoginData(res.data);
       })
       .catch((err) => window.alert(`Dikkat!! "${err.message}" hatası.. Tekrar deneyin.`));
-      setIsLoggedIn(false);
     }
 
     const logOut = () => {
-      console.log("logout");
+      //console.log("logout");
       setLoginData({});
-      setIsLoggedIn(false);
     };
     
     return (
-      <AuthContext.Provider value={{ isLoggedIn,,logOut,loginData }}>
+      <AuthContext.Provider value={{ loginHandleSubmitContext,isLoggedIn,logOut,loginData }}>
       {children}
     </AuthContext.Provider>
   );

@@ -7,23 +7,24 @@ import Navtopbar from './components/Navtopbar';
 import Loginform from './components/Loginform';
 import Friends from './components/Friends';
 import Addfriend from './components/Addfriend';
+import PrivateRoute from './contexts/PrivateRoute';
 
 
 function App() {
   return (
-    <div className='my-5 mx-5'>
+    <div className='w-6/12 mx-auto'>
       <Navtopbar/>
       <hr/>
       <Switch>
           <Route exact path="/login">
             <Loginform/>
           </Route>
-          <Route path="/friends/add">
+          <PrivateRoute path="/friends/add">
               <Addfriend/>
-          </Route>
-          <Route  path="/friends">
+          </PrivateRoute>
+          <PrivateRoute  path="/friends">
             <Friends/>
-          </Route>
+          </PrivateRoute>
       </Switch>
     </div>
   );
