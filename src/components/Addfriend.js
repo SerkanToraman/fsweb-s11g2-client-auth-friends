@@ -40,55 +40,51 @@ function Addfriend() {
       );
 
   }
-
+  const label = " text-xl md:text-2xl font-extrabold";
+  const input = "bg-black text-xl md:text-2xl text-white h-10 md:h-12 px-2 w-[20rem] md:w-[32rem]"
 
 
   return (
-    <div id="loginFormMainDiv" className="flex items-center flex-col">
-      <h1 className="text-8xl font-bold mb-6 text-center">Add Friend</h1>
-      <form  className="flex items-center flex-col" onSubmit={handleSubmit(addNewFriendSubmit)}>
-        <div className="flex gap-1 items-center">
-          <label id="name-label" className = "text-4xl my-6 font-semibold text-left w-28 mr-4" htmlFor="title">
+    <div className="flex flex-col items-center my-6 md:my-12">
+      <h1 className="text-4xl md:text-6xl font-bold">Add Friend</h1>
+      <form  className="flex flex-col" onSubmit={handleSubmit(addNewFriendSubmit)}>
+      
+          <label id="name-label" className={label} htmlFor="title">
             Name:
           </label>
             <input
-              className="text-white bg-black box-border h-10 w-80 p-4 border-2"
+              className={input}
               type="text"
               placeholder="name"
               {...register("name", { required: "Please enter a name" })}
             />
-          </div>
             {errors?.name && <p>{errors.name.message}</p>}
-        
-        <div className="flex gap-1 items-center flex-wrap">
-          <label id="email-label" className = "text-4xl my-6 font-semibold text-left w-28 mr-4" htmlFor="title">
+      
+          <label id="email-label" className={label}  htmlFor="title">
             E-mail:
           </label>
           <input
-            className="ext-2xl text-white bg-black box-border h-10 w-80 p-4 border-2"
+            className={input}
             type="email"
             placeholder="email"
             {...register("email", {
               required: "Please enter a valid e-mail.",
             })}
           />
-        </div>
         {errors?.email && <p>{errors.email.message}</p>}
-        <div className="flex gap-1 items-center flex-wrap" >
-          <label id="age-label" className = "text-4xl my-6 font-semibold text-left w-28 mr-4" htmlFor="title">
+          <label id="age-label" className={label}  htmlFor="title">
             Age:
           </label>
           <input
-          className="text-white bg-black box-border h-10 w-80 p-4 border-2"
+           className={input}
             type="number"
             placeholder="age"
             {...register("age", {
               required: "Please enter an age",
             })}
           />
-        </div>
         {errors?.age && <p>{errors.age.message}</p>}
-        <button type="submit" className="my-6 mx-auto px-10 rounded-2xl h-14 bg-black text-white  text-2xl w-60">Add Friend</button>
+        <button type="submit" className="my-6 w-40 md:w-80 rounded-2xl h-10 md:h-14 bg-black text-white  text-xl md:text-2xl mx-auto">Add Friend</button>
       </form>
     </div>
   )

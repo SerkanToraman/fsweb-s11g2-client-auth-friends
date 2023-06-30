@@ -1,7 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
 
-import './App.css';
-
 //import components
 import Navtopbar from './components/Navtopbar';
 import Loginform from './components/Loginform';
@@ -12,7 +10,7 @@ import PrivateRoute from './contexts/PrivateRoute';
 
 function App() {
   return (
-    <div className='w-6/12 mx-auto'>
+    <div className="w-11/12 m-auto lg:w-8/12">
       <Navtopbar/>
       <hr/>
       <Switch>

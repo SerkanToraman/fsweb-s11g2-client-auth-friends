@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState} from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
-import styled from 'styled-components';
+//import styled from 'styled-components';
 
 // const Main  = styled.div`
 // width:55rem;
@@ -39,24 +39,24 @@ const Loginform = () =>{
 
 
   return(
-    <div className="w-8/12 mx-auto my-12">
-        <h1 className="text-8xl font-extrabold text-center">LOGIN</h1>
+    <div className=" my-6 md:my-12 flex flex-col items-center">
+        <h1 className="text-4xl md:text-8xl font-extrabold ">LOGIN</h1>
         <form className="flex flex-col" onSubmit={handleSubmit}>
-            <label className="text-2xl font-extrabold text-left">Name:</label>
-            <input className=" bg-black text-2xl text-white h-12 px-2"
+            <label className="text-xl md:text-2xl font-extrabold text-left">Name:</label>
+            <input className= "bg-black text-xl md:text-2xl text-white h-10 md:h-12 px-2 w-[20rem] md:w-[32rem]"
             type = "text"
             name = "username"
             value = {user.username}
             onChange ={handleChange}
             ></input>
-            <label className="text-2xl text-1xl font-extrabold text-left px-2">Password:</label>
-            <input className="bg-black text-white text-2xl h-12 px-2"
+            <label className="text-xl md:text-2xl font-extrabold text-left">Password:</label>
+            <input className="bg-black text-xl md:text-2xl text-white h-10 md:h-12 px-2 w-[20rem] md:w-[32rem]"
             type = "text"
             name = "password"
             value = {user.password}
             onChange ={handleChange}
             ></input>
-            <button className='my-6 mx-auto px-10 rounded-2xl h-14 bg-black text-white  text-2xl w-60 '>Submit</button>
+            <button className='my-6 w-40 md:w-80 rounded-2xl h-10 md:h-14 bg-black text-white  ext-xl md:text-2xl mx-auto '>Submit</button>
         </form>
     </div>
   

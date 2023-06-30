@@ -25,11 +25,11 @@ function Friends() {
   console.log("friendsList",friendsList);
 
   return (
-    <div className="flex flex-col  m-10 items-center">
-      <p className='text-8xl font-bold mb-6 text-center'>FRIENDS LIST</p>
+    <div className="flex flex-col items-center my-6 md:my-12">
+      <p className='text-4xl md:text-8xl font-bold text-center'>FRIENDS LIST</p>
       <div>
         {friendsList.map((item,index) => 
-          <div className="text-4xl my-6 font-semibold text-left" key={index}>-{item.name} - {item.email}</div>
+          <div className="text-lg md:text-4xl my-6 font-semibold" key={index}>-{item.name} - {item.email}</div>
         )}
       </div>
     </div>

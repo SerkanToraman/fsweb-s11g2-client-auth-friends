@@ -5,6 +5,7 @@ import './index.css'
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import AuthContextProvider from './contexts/AuthContext';
+import "./reset.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

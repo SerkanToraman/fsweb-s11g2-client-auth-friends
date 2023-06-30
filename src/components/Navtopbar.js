@@ -11,20 +11,22 @@ const Navtopbar = () => {
     console.log("isLoggedIn",isLoggedIn);
   },[isLoggedIn]) ;
 
+  const button = 'w-20 md:w-32 rounded-2xl h-8 md:h-10 bg-black text-white text-[0.6rem] md:text-[1rem] hover:bg-white hover:text-black hover:bg-white hover:border-black hover:border-2'
+
   return (
-  <div className="flex my-8 ">
-    <h1 className="text-6xl grow mr-20">FRIENDS DATABASE</h1>
-    <nav className="flex items-center grow-0">
+  <div className="h-24 flex my-8 justify-between">
+    <h1 className="flex items-center text-4xl font-bold  md:text-6xl">FRIENDS DATABASE</h1>
+    <nav className="flex flex-col gap-2 md:flex-row items-center">
       {!isLoggedIn &&
     
-          <button onClick={() => push("/login")} type="button" className='mx-3 px-10 rounded-2xl h-10 bg-black text-white text-base hover:bg-white hover:text-black hover:bg-white hover:border-black hover:border-2'>Login.</button>
+          <button onClick={() => push("/login")} type="button" className={button}>Login.</button>
       }
       {isLoggedIn &&<>
-          <button onClick={() => push("/friends")} type="button" className='mx-3 px-10 rounded-2xl h-10 bg-black text-white text-base hover:bg-white hover:text-black hover:bg-white hover:border-black hover:border-2'>FriendList.</button>
+          <button onClick={() => push("/friends")} type="button" className={button}>FriendList.</button>
 
-          <button onClick={() => push("/friends/add")} type="button" className='mx-3 px-10  rounded-2xl h-10 bg-black text-white text-base hover:bg-white hover:text-black hover:bg-white hover:border-black hover:border-2'>AddFriend</button>
+          <button onClick={() => push("/friends/add")} type="button" className={button}>AddFriend</button>
       
-          <button onClick={()=>{logOut();push("/login")}} type="button" className='mx-3 px-10  rounded-2xl h-10 bg-black text-white text-base hover:bg-white hover:text-black hover:bg-white hover:border-black hover:border-2'>Logout</button> 
+          <button onClick={()=>{logOut();push("/login")}} type="button" className={button}>Logout</button> 
       </>
       }
     </nav>
